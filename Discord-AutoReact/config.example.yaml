@@ -1,16 +1,15 @@
 # ============================================================
-# Discord-AutoReact Configuration
 # Copy this file to config.yaml and fill in your values
 # ============================================================
 
-# Your Discord user token (NEVER share this)
-# Get it from the Network tab in Discord DevTools (Authorization header)
+# Your Discord user token (Never share this)
+# Get it from the "Application" tab by opening dev tools (F12)
 token: "YOUR_TOKEN_HERE"
 
 # ----------------------------------------------------------
 # Target
-# ----------------------------------------------------------
-# Channel ID to react in (right-click channel → Copy ID)
+
+# Channel ID to react in (right-click channel -> Copy ID)
 # Works for both server channels and DMs
 channel_id: 123456789012345678
 
@@ -23,23 +22,22 @@ user_blacklist: []
 
 # ----------------------------------------------------------
 # Reaction Behaviour
-# ----------------------------------------------------------
+
 # List of emojis to use. Can be unicode or custom emoji IDs
 # Examples: "🔥", "❤️", "👍", "<:pepe:123456789012345678>"
 emojis:
   - "🔥"
   - "❤️"
-  - "✨"
   - "👍"
 
 # How to pick the emoji:
-#   cycle   → go through the list in order
-#   random  → pick randomly every time
+#   cycle -> go through the list in order
+#   random -> pick randomly every time
 emoji_mode: cycle
 
 # ----------------------------------------------------------
 # What to react to
-# ----------------------------------------------------------
+
 # Mode options:
 #   last_n      → react to the last N messages in the channel
 #   keyword     → only react to messages containing certain words
@@ -61,7 +59,7 @@ min_age_seconds: 5
 
 # ----------------------------------------------------------
 # Rate Limiting (IMPORTANT)
-# ----------------------------------------------------------
+
 # Discord is strict. These defaults are safe for most accounts.
 # Do not go below 1.2s average or you risk temporary locks.
 
@@ -82,7 +80,7 @@ batch_cooldown: 18
 
 # ----------------------------------------------------------
 # Safety & Convenience
-# ----------------------------------------------------------
+
 # Dry run: show what would happen without actually reacting
 dry_run: false
 
