@@ -1,0 +1,96 @@
+# ============================================================
+# Discord-AutoReact Configuration
+# Copy this file to config.yaml and fill in your values
+# ============================================================
+
+# Your Discord user token (NEVER share this)
+# Get it from the Network tab in Discord DevTools (Authorization header)
+token: "YOUR_TOKEN_HERE"
+
+# ----------------------------------------------------------
+# Target
+# ----------------------------------------------------------
+# Channel ID to react in (right-click channel → Copy ID)
+# Works for both server channels and DMs
+channel_id: 123456789012345678
+
+# Optional: only react to messages from these user IDs
+# Leave empty [] to react to everyone
+user_whitelist: []
+
+# Optional: skip messages from these user IDs
+user_blacklist: []
+
+# ----------------------------------------------------------
+# Reaction Behaviour
+# ----------------------------------------------------------
+# List of emojis to use. Can be unicode or custom emoji IDs
+# Examples: "🔥", "❤️", "👍", "<:pepe:123456789012345678>"
+emojis:
+  - "🔥"
+  - "❤️"
+  - "✨"
+  - "👍"
+
+# How to pick the emoji:
+#   cycle   → go through the list in order
+#   random  → pick randomly every time
+emoji_mode: cycle
+
+# ----------------------------------------------------------
+# What to react to
+# ----------------------------------------------------------
+# Mode options:
+#   last_n      → react to the last N messages in the channel
+#   keyword     → only react to messages containing certain words
+#   all         → react to every message (use with max_messages)
+mode: last_n
+
+# Used when mode = last_n or all
+max_messages: 50
+
+# Used when mode = keyword (case-insensitive)
+keywords:
+  - "react"
+  - "emoji"
+  - "nice"
+
+# Only react to messages that are older than this many seconds
+# (helps avoid reacting to brand new messages)
+min_age_seconds: 5
+
+# ----------------------------------------------------------
+# Rate Limiting (IMPORTANT)
+# ----------------------------------------------------------
+# Discord is strict. These defaults are safe for most accounts.
+# Do not go below 1.2s average or you risk temporary locks.
+
+# Minimum delay between reactions (seconds)
+min_delay: 1.4
+
+# Maximum delay between reactions (seconds)
+max_delay: 2.8
+
+# Extra random jitter added on top (seconds)
+jitter: 0.4
+
+# How many reactions before taking a longer break
+batch_size: 12
+
+# How long to sleep after each batch (seconds)
+batch_cooldown: 18
+
+# ----------------------------------------------------------
+# Safety & Convenience
+# ----------------------------------------------------------
+# Dry run: show what would happen without actually reacting
+dry_run: false
+
+# Skip messages that already have any of your emojis
+skip_already_reacted: true
+
+# Only react to messages that have no reactions yet
+only_unreacted: false
+
+# Log level: DEBUG, INFO, WARNING, ERROR
+log_level: INFO
