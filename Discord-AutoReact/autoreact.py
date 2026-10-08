@@ -3,6 +3,8 @@
 Discord-AutoReact
 A clean, rate-limit conscious self-bot for automated reactions.
 
+Made by "HolyVizle001" on github
+
 This tool is provided for educational and personal use only.
 Self-bots violate Discord's Terms of Service. Use at your own risk.
 """
@@ -33,18 +35,15 @@ from rich.progress import (
 from rich.panel import Panel
 from rich.table import Table
 
-# ---------------------------------------------------------------------------
 # Constants & Console
-# ---------------------------------------------------------------------------
 
 VERSION = "1.2.1"
 CONSOLE = Console()
 LOG = logging.getLogger("autoreact")
 
 
-# ---------------------------------------------------------------------------
 # Config
-# ---------------------------------------------------------------------------
+
 
 @dataclass
 class Config:
@@ -112,9 +111,7 @@ class Config:
         )
 
 
-# ---------------------------------------------------------------------------
 # Rate Limiter
-# ---------------------------------------------------------------------------
 
 class SmartRateLimiter:
     """
@@ -153,9 +150,7 @@ class SmartRateLimiter:
             await asyncio.sleep(cooldown)
 
 
-# ---------------------------------------------------------------------------
 # Core Logic
-# ---------------------------------------------------------------------------
 
 class AutoReact:
     def __init__(self, cfg: Config):
@@ -347,9 +342,7 @@ class AutoReact:
             CONSOLE.print("\n[yellow]Interrupted by user.[/]")
 
 
-# ---------------------------------------------------------------------------
 # Entry point
-# ---------------------------------------------------------------------------
 
 def setup_logging(level: str) -> None:
     logging.basicConfig(
