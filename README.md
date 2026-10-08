@@ -10,14 +10,14 @@
 
 ---
 
-### ⚠️ Important Disclaimer
+### Important Disclaimer
 
 This is a **self-bot**.  
 Self-bots are against [Discord's Terms of Service](https://discord.com/terms).  
 Using this can get your account disabled.  
 
-I built this for personal archival / convenience use and as a learning project.  
-**You are solely responsible for how you use it.**  
+I built this for personal showcase / convenience use and as a learning project.  
+**You are responsible for how you use it.**  
 I am not responsible for any account actions Discord takes.
 
 ---
@@ -31,46 +31,16 @@ I am not responsible for any account actions Discord takes.
 - Only react to completely unreacted messages (optional)
 - Message age filter (avoid reacting to brand-new messages)
 - **Smart rate limiter**
-  - Random delay between reactions
-  - Configurable batch size + cooldown
-  - Automatic handling of 429s
 - Beautiful terminal UI with progress bar and summary
 - Dry-run mode so you can test safely
 - Single clean config file
 
 ---
 
-## Screenshots
-
-```
-╭────────────────── Discord-AutoReact v1.2.1 ──────────────────╮
-│ Logged in as  YourName#0001                                  │
-│ Target        #general                                       │
-│ Mode          last_n                                         │
-│ Dry-run       False                                          │
-╰──────────────────────────────────────────────────────────────╯
-
-Found 47 messages to react to.
-
-Reacting… ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47/47 0:01:52
-
-          Run Summary
-┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
-┃ Metric               ┃ Count ┃
-┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
-│ Messages scanned     │   50  │
-│ Successfully reacted │   47  │
-│ Failed               │    0  │
-│ Skipped by filters   │    3  │
-└──────────────────────┴───────┘
-```
-
----
-
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Discord-AutoReact.git
+git clone https://github.com/HolyVizle001/Discord-AutoReact.git
 cd Discord-AutoReact
 
 python -m venv .venv
@@ -94,26 +64,18 @@ cp config.example.yaml config.yaml
 ### How to get your token
 
 1. Open Discord in your browser
-2. Press `Ctrl + Shift + I` (DevTools)
-3. Go to the **Network** tab
-4. Send a message or switch channels
-5. Click any request → Headers → look for `authorization`
+2. Press `Ctrl + Shift + I` or `F12` (DevTools)
+3. Go to the **Application** tab
+4. Scroll down to "token"
+5. Copy the long string there
 
 > Never share your token. Never commit `config.yaml`.
-
-### How to get a channel ID
-
-Enable Developer Mode in Discord settings → right-click the channel → Copy Channel ID.
-
----
 
 ## Usage
 
 ```bash
 python autoreact.py
 ```
-
-That’s it. The bot will log in, fetch messages according to your config, and start reacting with the configured delays.
 
 ### Recommended first run
 
@@ -128,7 +90,7 @@ Run it once to confirm everything looks correct, then turn dry-run off.
 
 ---
 
-## Configuration Guide
+## Config Guide (made using Ai)
 
 | Key | Description | Default |
 |-----|-------------|---------|
@@ -150,44 +112,6 @@ Going much lower than ~1.3s average is asking for trouble.
 
 ---
 
-## Rate Limiting Philosophy
-
-Discord’s reaction endpoints are not the most generous.  
-This tool prioritises **account safety** over speed:
-
-- Randomised delay on every reaction
-- Extra jitter so the pattern doesn’t look robotic
-- Forced cooldown every N reactions
-- Proper handling of actual 429 responses
-
-You can tune it, but the defaults have been tested on normal accounts without issues.
-
----
-
-## Project Structure
-
-```
-Discord-AutoReact/
-├── autoreact.py          # Main script
-├── config.example.yaml   # Example configuration
-├── requirements.txt
-├── LICENSE
-└── README.md
-```
-
----
-
-## Contributing
-
-Found a bug or have a clean improvement?  
-Open an issue or PR. Keep it simple and well-tested.
-
----
-
 ## License
 
 MIT – see [LICENSE](LICENSE).
-
----
-
-**Stay safe and don’t be stupid with your token.**
