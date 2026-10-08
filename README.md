@@ -115,3 +115,7 @@ Going much lower than ~1.3s average is asking for trouble.
 ## License
 
 MIT – see [LICENSE](LICENSE).
+
+---
+
+Last note: this took fucking ages
